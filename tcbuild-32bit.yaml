@@ -1,0 +1,28 @@
+# 
+# TorizonCoreBuilder configuration file for RAC (Remote Access Client)
+# Author: Stefano V.
+# Disclaimer: THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE 
+#             HOPE THAT IT WILL BE USEFUL,BUT WITHOUT ANY WARRANTY.
+# Documentation https://developer.toradex.com/torizon/os-customization/torizoncore-builder-workflow/#customizing-the-configuration-file
+#
+input:
+  easy-installer:
+    toradex-feed:
+      version: "6.2.0"
+      release: quarterly
+      machine: colibri-imx6
+      distro: torizon-upstream
+      variant: torizon-core-docker
+      build-number: 2
+
+customization:
+  # Customization section items.
+  filesystem:
+     - common-changes/
+     - rac_32bit/
+
+output:
+  easy-installer:
+    local: rac-binary
+  ostree:
+    branch: tcb

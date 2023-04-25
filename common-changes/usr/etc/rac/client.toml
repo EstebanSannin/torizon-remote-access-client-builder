@@ -1,0 +1,20 @@
+[torizon]
+url = "https://dgw.torizon.io/ras/"
+server_cert_path = "/usr/lib/sota/root.crt"
+client_cert_path = "/var/sota/import/client.pem"
+client_key_path = "/var/sota/import/pkey.pem"
+
+[device]
+# If this file does not exist, a new key will be generated and saved to this file
+ssh_private_key_path = "/var/rac/device-key-01.sec"
+
+[device.session.target_host]
+host_port = "127.0.0.1:22"
+authorized_keys_path = "/home/torizon/.ssh/authorized-keys2"
+
+# Need to review usage of this mode in the future
+#[device.session.spawned_sshd]
+#sshd_path = "/usr/sbin/sshd"
+#config_dir = "/run/rac"
+#host_key_path = "/run/rac/spawned_sshd_host_key"
+
